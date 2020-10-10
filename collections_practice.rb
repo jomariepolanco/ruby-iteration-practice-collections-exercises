@@ -40,13 +40,23 @@ def sum_array(array)
     array.inject(:+)
 end
 
+# def add_s(array)
+#     new_array = []
+#     array.each do |ele|
+#         if ele != array[1]
+#             ele << "s"
+#         end
+#         new_array << ele
+#     end 
+#     new_array  
+# end
+
 def add_s(array)
-    new_array = []
-    array.each do |ele|
-        if ele != array[1]
+    array.each_with_index.collect do |ele, index| 
+        if index != 1 
             ele << "s"
-        end
-        new_array << ele
-    end 
-    new_array  
+        else 
+            ele 
+        end 
+    end
 end
